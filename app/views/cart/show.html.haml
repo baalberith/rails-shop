@@ -1,0 +1,13 @@
+%h2 Cart
+
+- @products.each_with_index do |product, index|
+  %p
+    Name:
+    = product.name
+    %br
+    Price:
+    = product.price
+    = link_to "Remove from cart", {:controller => "cart" , :action => "delete", :product_number =>  index}
+
+- if @products.any?
+  = link_to "Order", new_order_path

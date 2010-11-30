@@ -1,0 +1,11 @@
+%h2 Products
+
+- @products.each do |product|
+  %p
+    Name:
+    = product.name
+    %br
+    Price:
+    = product.price
+      
+= link_to "Add product", new_admin_product_path

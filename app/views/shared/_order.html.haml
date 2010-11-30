@@ -1,0 +1,17 @@
+%p
+  %strong Name: 
+  = order.name
+  %br
+  %strong Address: 
+  = order.address
+  %br
+  %p
+    Products:
+    - order.order_items.each do |prod|
+      %p
+        Name:
+        = Product.find(prod.product_id).name
+        %br
+        Price:
+        = Product.find(prod.product_id).price
+        %br

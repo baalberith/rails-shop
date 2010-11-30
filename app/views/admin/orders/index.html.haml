@@ -1,0 +1,9 @@
+%h2 Orders
+  
+- @users.each do |user|
+  - if user.orders.any?
+    %p
+      %strong User: 
+      = user.email
+      - user.orders.each do |order|
+        = render :partial => 'shared/order', :locals => {:order => order}

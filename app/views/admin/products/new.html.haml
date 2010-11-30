@@ -1,0 +1,15 @@
+%h2 New Product
+
+= form_for [:admin, @product] do |f|
+  - if @product.errors.any?
+    Errors:
+    %ul
+      - @product.errors.full_messages.each do |msg|
+        %li= msg
+  %p
+    Name:
+    = f.text_field :name
+  %p
+    Price:
+    = f.text_field :price
+  = f.submit "Add"

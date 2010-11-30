@@ -1,0 +1,4 @@
+%h2 Orders
+  
+- @orders.each_with_index do |order, index|
+  = render :partial => 'shared/order', :locals => {:order => order}
